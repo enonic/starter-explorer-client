@@ -1,0 +1,13 @@
+{
+  "author": "Christian Andreas Westgaard <cwe@enonic.com>",
+  "devDependencies": {
+    "@enonic/webpack-server-side-js": "^0.0.7",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2"
+  },
+  "private": true,
+  "scripts": {
+    "watch": "node_modules/webpack-cli/bin/cli.js -w --stdin",
+    "webpack": "node_modules/webpack-cli/bin/cli.js"
+  }
+}
