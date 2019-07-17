@@ -3,7 +3,8 @@
   "devDependencies": {
     "@enonic/webpack-server-side-js": "^0.1.4",
     "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.2.2"
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "webpack-cli": "^3.3.6"
   },
   "private": true,
   "scripts": {
