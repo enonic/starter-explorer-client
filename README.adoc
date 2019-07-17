@@ -1,0 +1,8 @@
+= Starter explorer client
+:toc: right
+
+== Create project
+
+```bash
+enonic project create -r enonic/starter-explorer-client -v 1.0.0-SNAPSHOT -d <destination folder name>
+```
