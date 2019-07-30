@@ -13,7 +13,7 @@ const SS_ALIAS = {};
 
 
 const SS_EXTERNALS = [
-	'/lib/cache', // lib-explorer-client
+	'/lib/cache',
 	/^\/lib\/explorer\//,
 	/^\/lib\/http-client.*$/,
 	/^\/lib\/xp\//
@@ -22,7 +22,6 @@ const SS_EXTERNALS = [
 
 if (MODE === 'development') {
 	SS_ALIAS['/lib/util'] = path.resolve(__dirname, '../lib-util/src/main/resources/lib/util');
-	SS_ALIAS['/lib/explorer/client'] = path.resolve(__dirname, '../lib-explorer-client/src/main/resources/lib/explorer/client/');
 	SS_ALIAS['/lib/explorer'] = path.resolve(__dirname, '../lib-explorer/src/main/resources/lib/explorer/');
 } else {
 	SS_EXTERNALS.push('/lib/util');
@@ -37,12 +36,12 @@ const WEBPACK_CONFIG = [
 		mode: MODE,
 		optimization: {
 			minimizer: [
-				new TerserPlugin({
+				new TerserPlugin(/*{
 					terserOptions: {
 						compress: {},
-						mangle: true // Note `mangle.properties` is `false` by default.
+						//mangle: true // This will DESTROY exports!
 					}
-				})
+				}*/)
 			]
 		},
 		plugins: [

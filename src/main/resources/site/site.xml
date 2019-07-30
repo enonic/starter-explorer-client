@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <site>
-  <x-data name="search"/>
+  <form>
+    <input name="interfaceName" type="CustomSelector">
+			<label>Interface</label>
+			<occurrences minimum="0" maximum="1"/>
+			<config>
+				<service>interfaceSelector</service>
+			</config>
+		</input>
+
+		<input name="queryParamName" type="TextLine">
+			<label>Name of query parameter to use</label>
+			<occurrences minimum="0" maximum="1"/>
+			<default>q</default>
+		</input>
+  </form>
+  <!--x-data name="search"/-->
 </site>

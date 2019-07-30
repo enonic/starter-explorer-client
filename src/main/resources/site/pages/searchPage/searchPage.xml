@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page>
     <display-name>Search page</display-name>
+    <form>
+      <input name="interfaceName" type="CustomSelector">
+  			<label>Interface</label>
+  			<occurrences minimum="1" maximum="1"/>
+  			<config>
+  				<service>interfaceSelector</service>
+  			</config>
+  		</input>
+
+  		<input name="queryParamName" type="TextLine">
+  			<label>Name of query parameter to use</label>
+  			<occurrences minimum="1" maximum="1"/>
+  			<default>q</default>
+  		</input>
+    </form>
     <regions>
     </regions>
 </page>
