@@ -1,5 +1,5 @@
 import {search} from '/lib/explorer/client';
-import {toStr} from '/lib/util';
+//import {toStr} from '/lib/util';
 import {dlv as getIn} from '/lib/util/object';
 import {sanitize} from '/lib/xp/common';
 import {
@@ -43,7 +43,7 @@ export function get({params}) {
 			)
 		)
 	);
-	log.info(`name:${name}`);
+	//log.info(`name:${name}`);
 
 	const searchString = params[name];
 	//log.info(`searchString:${searchString}`);
@@ -67,7 +67,7 @@ export function get({params}) {
 			)
 		)
 	);
-	log.info(`interfaceName:${interfaceName}`);
+	//log.info(`interfaceName:${interfaceName}`);
 
 	const searchParams = {
 		/*count: 10,
