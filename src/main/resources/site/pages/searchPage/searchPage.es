@@ -1,4 +1,4 @@
-import {search} from '/lib/explorer/client';
+import {search} from '/lib/explorer';
 //import {toStr} from '/lib/util';
 import {dlv as getIn} from '/lib/util/object';
 import {sanitize} from '/lib/xp/common';
@@ -6,7 +6,8 @@ import {
 	//getComponent,
 	getContent as getCurrentContent,
 	getSite as getCurrentSite,
-	getSiteConfig
+	getSiteConfig,
+	serviceUrl as getServiceUrl
 } from '/lib/xp/portal';
 
 
@@ -16,6 +17,15 @@ const APP_NAME = sanitize(app.name).replace(/\./g, '-');
 
 export function get({params}) {
 	//log.info(toStr({params}));
+
+	const serviceUrl = getServiceUrl({
+		params: {
+			q: 'test'
+		},
+		service: 'searchDefaultInterface',
+		type: 'absolute'
+	});
+	log.info(`serviceUrl:${serviceUrl}`);
 
 	/*const component = getComponent();
 	log.info(`component:${component}`);*/

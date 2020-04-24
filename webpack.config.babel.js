@@ -14,7 +14,6 @@ const SS_ALIAS = {};
 
 const SS_EXTERNALS = [
 	'/lib/cache',
-	/^\/lib\/explorer\//,
 	/^\/lib\/http-client.*$/,
 	/^\/lib\/xp\//
 ];
@@ -24,6 +23,7 @@ if (MODE === 'development') {
 	SS_ALIAS['/lib/util'] = path.resolve(__dirname, '../lib-util/src/main/resources/lib/util');
 	SS_ALIAS['/lib/explorer'] = path.resolve(__dirname, '../lib-explorer/src/main/resources/lib/explorer/');
 } else {
+	SS_EXTERNALS.push(/^\/lib\/explorer.*$/);
 	SS_EXTERNALS.push('/lib/util');
 	SS_EXTERNALS.push(/^\/lib\/util\//);
 }
