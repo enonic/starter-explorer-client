@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <h1>Search</h1>
+    <form>
+      <input type="text" th:name="${name}" th:value="${searchString}">
+      <ul>
+        <li th:each="hit : ${hits}">
+          <a th:href="${hit.href}">
+            <h2>[(${hit.title})]</h2>
+            <p>[(${hit.text})]</p>
+          </a>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

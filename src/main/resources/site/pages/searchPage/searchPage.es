@@ -1,5 +1,5 @@
 import {search} from '/lib/explorer';
-//import {toStr} from '/lib/util';
+import {toStr} from '/lib/util';
 import {dlv as getIn} from '/lib/util/object';
 import {sanitize} from '/lib/xp/common';
 import {
@@ -9,7 +9,10 @@ import {
 	getSiteConfig,
 	serviceUrl as getServiceUrl
 } from '/lib/xp/portal';
+import {render} from '/lib/thymeleaf';
 
+
+const VIEW = resolve('searchPage.th.html');
 
 const APP_NAME = sanitize(app.name).replace(/\./g, '-');
 //log.info(toStr({APP_NAME}));
@@ -18,14 +21,14 @@ const APP_NAME = sanitize(app.name).replace(/\./g, '-');
 export function get({params}) {
 	//log.info(toStr({params}));
 
-	const serviceUrl = getServiceUrl({
+	/*const serviceUrl = getServiceUrl({
 		params: {
 			q: 'test'
 		},
 		service: 'searchDefaultInterface',
 		type: 'absolute'
 	});
-	log.info(`serviceUrl:${serviceUrl}`);
+	log.info(`serviceUrl:${serviceUrl}`);*/
 
 	/*const component = getComponent();
 	log.info(`component:${component}`);*/
@@ -55,7 +58,7 @@ export function get({params}) {
 	);
 	//log.info(`name:${name}`);
 
-	const searchString = params[name];
+	const searchString = params[name] || '';
 	//log.info(`searchString:${searchString}`);
 
 	/*const pageInterfaceName = getIn(currentContent, 'page.config.interfaceName');
@@ -93,10 +96,18 @@ export function get({params}) {
 	//log.info(toStr({searchParams}));
 
 	const res = search(searchParams);
-	//log.info(toStr({res}));
+	log.info(toStr({res}));
+
+	const {hits} = res;
+
+	const model = {
+		hits,
+		name,
+		searchString
+	};
 
 	return {
-		body: res,
-		contentType: 'application/json;charset=utf-8'
+		body: render(VIEW, model),
+		contentType: 'text/html;charset=utf-8'
 	}
 }

@@ -15,6 +15,7 @@ const SS_ALIAS = {};
 const SS_EXTERNALS = [
 	'/lib/cache',
 	/^\/lib\/http-client.*$/,
+	/^\/lib\/thymeleaf/,
 	/^\/lib\/xp\//
 ];
 
