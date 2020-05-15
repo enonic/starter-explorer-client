@@ -2,7 +2,7 @@
   "author": "Christian Andreas Westgaard <cwe@enonic.com>",
   "devDependencies": {
     "@enonic/webpack-server-side-js": "^0.1.4",
-    "acorn": "^7.1.1",
+    "acorn": "^7.2.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2"
   },
