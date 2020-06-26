@@ -81,6 +81,17 @@ export function get({params}) {
 		)
 	);
 	//log.info(`interfaceName:${interfaceName}`);
+	if (!interfaceName) {
+		return {
+			body: `<html>
+			  <body>
+			    <h1>Interface not configured!</h1>
+					<p>You can select the default interface for the entire site in the application site config.</p>
+			  </body>
+			</html>`,
+			contentType: 'text/html;charset=utf-8'
+		}
+	}
 
 	const searchParams = {
 		/*count: 10,
