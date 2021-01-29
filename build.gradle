@@ -16,7 +16,7 @@ repositories {
 
 app {
 	name = project.appName
-	displayName = 'Change me in build.gradle'
+	displayName = "${appDisplayName}"
 	vendorName = 'Enonic AS'
 	vendorUrl = 'http://enonic.com'
 	systemVersion = "${xpVersion}"
@@ -60,7 +60,7 @@ dependencies {
 	//include 'com.enonic.lib:text-encoding:1.2.0'
 	include 'com.enonic.lib:lib-thymeleaf:2.0.0'
 
-	include 'com.enonic.lib:lib-explorer:3.0.1'
+	include "com.enonic.lib:lib-explorer:${libExplorerVersion}"
 	//include 'com.enonic.lib:lib-util:2.2.0'
 
 	// WARNING: Do NOT use include files, jar file will be missing dependencies!
