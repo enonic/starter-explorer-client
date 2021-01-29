@@ -3,13 +3,16 @@ import path from 'path';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import {webpackServerSideJs} from '@enonic/webpack-server-side-js';
+import webpack from 'webpack';
 
 
 //const MODE = 'development';
 const MODE = 'production';
 
 
-const SS_ALIAS = {};
+const SS_ALIAS = {
+	myGlobal: path.resolve(__dirname, 'src/main/resources/global')
+};
 
 
 const SS_EXTERNALS = [
@@ -46,6 +49,9 @@ const WEBPACK_CONFIG = [
 			]
 		},
 		plugins: [
+			new webpack.ProvidePlugin({
+				global: 'myGlobal'
+			}),
 			new BrowserSyncPlugin({
 				host: 'localhost',
 				port: 3000,
