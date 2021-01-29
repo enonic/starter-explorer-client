@@ -3,6 +3,7 @@ import path from 'path';
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import {webpackServerSideJs} from '@enonic/webpack-server-side-js';
+//import {webpackServerSideJs} from '../webpack-server-side-js/dist';
 import webpack from 'webpack';
 
 
