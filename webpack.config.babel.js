@@ -10,6 +10,8 @@ import webpack from 'webpack';
 //const MODE = 'development';
 const MODE = 'production';
 
+const BOOL_LOCAL_JS_UTILS = MODE !== 'production';
+
 const SRC_DIR = 'src/main/resources';
 const DST_DIR = 'build/resources/main';
 
@@ -32,7 +34,11 @@ const SERVER_JS_ENTRY = dict(SERVER_JS_FILES.map(k => [
 //print({SERVER_JS_ENTRY}, { maxItems: Infinity });
 //process.exit();
 
-const SS_ALIAS = {};
+const SS_ALIAS = {
+	'@enonic/js-utils': BOOL_LOCAL_JS_UTILS
+		? path.resolve(__dirname, '../enonic-js-utils/dist/cjs/index.js')
+		: path.resolve(__dirname, './node_modules/@enonic/js-utils/dist/cjs/index.js'),
+};
 
 const SS_EXTERNALS = [
 	'/lib/cache',
@@ -43,7 +49,9 @@ const SS_EXTERNALS = [
 
 if (MODE === 'development') {
 	SS_ALIAS['/lib/util'] = path.resolve(__dirname, '../lib-util/src/main/resources/lib/util');
-	SS_ALIAS['/lib/explorer'] = path.resolve(__dirname, '../lib-explorer/src/main/resources/lib/explorer/');
+	SS_ALIAS['/lib/explorer'] = path.resolve(__dirname, '../lib-explorer-3.x/src/main/resources/lib/explorer/');
+	SS_ALIAS['@enonic/nashorn-polyfills'] = path.resolve(__dirname, '../lib-explorer-3.x/src/main/resources/lib/nashorn/index');
+
 } else {
 	SS_EXTERNALS.push(/^\/lib\/explorer.*$/);
 	SS_EXTERNALS.push('/lib/util');
