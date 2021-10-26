@@ -1102,6 +1102,11 @@
   resolved "https://registry.yarnpkg.com/@enonic/global-polyfill/-/global-polyfill-1.0.0.tgz#a9393b2efe746a484af95fb1f848b2903b3d38c6"
   integrity sha512-UYw+d/dNC9z8CqrTc9zHzOrDr9xypFN0hu5fhc8dKxdhtvzfsf1EipwG1wB5XRm61G6KOeK/wEM1vqeGM/0dag==
 
+"@enonic/js-utils@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@enonic/js-utils/-/js-utils-0.3.1.tgz#1a67e74552dfe5ac32dc0bd4d80d0695c482375d"
+  integrity sha512-uJ56KolD6tySppS1FEc9kXjXv9FZhDcZ9zAXCDpRbWwzIgCvz6vQFrFOoEAGV9LUiJNUCQHLlHqkTgKwsspXXA==
+
 "@eslint/eslintrc@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.1.tgz#442763b88cecbe3ee0ec7ca6d6dd6168550cbf14"
