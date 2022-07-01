@@ -12,7 +12,7 @@ plugins {
 repositories {
 	// mavenLocal()
 	xp.enonicRepo()
-	jcenter()
+	mavenCentral()
 }
 
 
